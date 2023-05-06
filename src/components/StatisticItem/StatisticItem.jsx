@@ -3,11 +3,14 @@ import {
   StatisticText,
   StatisticCounter,
 } from './StatisticItem.styled';
+import { IconContext } from 'react-icons';
 
-export const StatisticItem = ({ total, title }) => {
+export const StatisticItem = ({ total, title, icon }) => {
   return (
     <StatisticBox>
-      {/* Тут має бути іконка */}
+      <IconContext.Provider value={{ size: '2em' }}>
+        {icon}
+      </IconContext.Provider>
       <StatisticCounter>{total}</StatisticCounter>
       <StatisticText>{title}</StatisticText>
     </StatisticBox>

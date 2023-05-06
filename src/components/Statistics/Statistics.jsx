@@ -5,10 +5,10 @@ import { MdPeople, MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { GiTreeDoor } from 'react-icons/gi';
 
 const indexIcons = [
-  FaRegThumbsUp,
-  MdPeople,
-  MdOutlineProductionQuantityLimits,
-  GiTreeDoor,
+  <FaRegThumbsUp />,
+  <MdPeople />,
+  <MdOutlineProductionQuantityLimits />,
+  <GiTreeDoor />,
 ];
 
 export const Statistics = ({ title, stats }) => {
@@ -18,7 +18,12 @@ export const Statistics = ({ title, stats }) => {
 
       <StatisticsList>
         {stats.map(({ id, title, total }, index) => (
-          <StatisticItem key={id} title={title} total={total} />
+          <StatisticItem
+            key={id}
+            title={title}
+            total={total}
+            icon={indexIcons[index]}
+          />
         ))}
       </StatisticsList>
     </>
